@@ -69,12 +69,17 @@ def has_33(nums):
 #7 
 
 def spy_game(nums):
-	for i in range(2, len(nums)):
-		if nums[i] == 7 and nums[i - 2] == 0 and nums[i - 1] == 0:
-			return True
+	cnt = 0
+	for x in nums:
+		if x == 0:
+			cnt+= 1
+		if x == 7:
+			if cnt >= 2:
+				return True
 	return False
 
-#print(spy_game([1,2,4,0,0,7,5]))
+#print(spy_game([1,2,4,0,0,7,5])) 
+print(spy_game([1,7,2,0,4,5,0]))
 #8
 
 from math import pi
@@ -131,6 +136,7 @@ def Game():
 			cnt += 1
 
 #Game()
+#13 
 
 
 
