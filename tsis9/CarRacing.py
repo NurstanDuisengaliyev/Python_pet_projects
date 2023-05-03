@@ -30,7 +30,7 @@ font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 
-background = pygame.image.load("./tsis8/images/AnimatedStreet.png")
+background = pygame.image.load("/tsis9/Images/AnimatedStreet.png")
 
 # Create a white screen
 DISPLAYSURF = pygame.display.set_mode((400, 600))
@@ -43,7 +43,7 @@ class Coin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.weight = random.randrange(1, 4)
-        self.image = pygame.image.load("./tsis8/images/coin.jpg")
+        self.image = pygame.image.load("./tsis9/Images/coin.jpg")
         self.image = pygame.transform.scale(self.image, (self.image.get_width() / 11, self.image.get_height() / 11))
         self.rect = self.image.get_rect(
             topleft=(random.randrange(15, SCREEN_WIDTH - 15), random.randrange(SCREEN_HEIGHT // 2, SCREEN_HEIGHT - 15)))
@@ -58,7 +58,7 @@ class Coin(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("./tsis8/images/Enemy.png")
+        self.image = pygame.image.load("./tsis9/Images/Enemy.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -74,7 +74,7 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("./tsis8/images/Player.png")
+        self.image = pygame.image.load("./tsis9/Images/Player.png")
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -114,7 +114,7 @@ pygame.time.set_timer(NEW_COIN, 5000)
 # adding a new User event for music end
 MUSIC_END = pygame.USEREVENT + 3
 pygame.mixer.music.set_endevent(MUSIC_END)
-pygame.mixer.music.load("./tsis8/Music/background.wav")
+pygame.mixer.music.load("./tsis9/Music/background.wav")
 pygame.mixer.music.play()
 # Game Loop
 while True:
@@ -122,7 +122,7 @@ while True:
     # Cycles through all events occurring
     for event in pygame.event.get():
         if event.type == MUSIC_END:
-            pygame.mixer.music.load("./tsis8/Music/background.wav")
+            pygame.mixer.music.load("./tsis9/Music/background.wav")
             pygame.mixer.music.play()
         if event.type == NEW_COIN:
             coin.new_coin()
@@ -156,7 +156,7 @@ while True:
 
     # To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('./tsis8/Music/crash.wav').play()
+        pygame.mixer.Sound('./tsis9/Music/crash.wav').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(RED)

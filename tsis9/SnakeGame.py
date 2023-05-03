@@ -70,7 +70,6 @@ def draw_score():
 
 
 timer = time.time()
-dis_time = 0
 food_pos = get_random()
 food_weight = random.randrange(1, 4)
 inc = 0
@@ -93,9 +92,6 @@ while True:
     screen.fill(background_color)
 
     if food_pos != (0, 0) and (time.time() - timer) >= 4:
-        food_pos = (0, 0)
-        dis_time = time.time()
-    if food_pos == (0, 0) and (time.time() - dis_time)  >= 2:
         timer = time.time()
         food_pos = get_random()
         food_weight = random.randrange(1, 4)

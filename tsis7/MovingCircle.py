@@ -19,16 +19,16 @@ while True:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP]:
         if y - 20 >= 25:
-            y -= 20
+            y -= 20//3
     if keys[pygame.K_DOWN]:
         if y + 20 <= height - 25:
-            y += 20
+            y += 20//3
     if keys[pygame.K_LEFT]:
         if x - 20 >= 25:
-            x -= 20
+            x -= 20//3
     if keys[pygame.K_RIGHT]:
         if x + 20 <= width - 25:
-            x += 20
+            x += 20//3
     screen.fill((255, 255, 255))
     pygame.draw.circle(screen, (255, 0, 0), (x, y), 25)
     pygame.display.update()
