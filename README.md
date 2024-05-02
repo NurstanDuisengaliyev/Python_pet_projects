@@ -1,1 +1,1 @@
-# pp2-22B031491
+Python pet projects using Pygame and PostgreSQL. 
